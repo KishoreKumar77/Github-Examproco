@@ -1,0 +1,11 @@
+on: [push]
+
+jobs:
+    schedule-job:
+        runs-on: ubuntu-latest
+        name: Test schedule job running every 2 mins
+        steps:
+            - name: Echo current time
+              run: echo "The current time is ${date}"
+
+            

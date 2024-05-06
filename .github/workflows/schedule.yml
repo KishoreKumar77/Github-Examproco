@@ -8,6 +8,6 @@ jobs:
         name: Test schedule job running every 2 mins
         steps:
             - name: Echo current time
-              run: echo "The current time is ${date}"
+              run: echo "The current time is $(date)"
 
             

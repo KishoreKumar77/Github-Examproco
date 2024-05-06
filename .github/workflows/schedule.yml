@@ -1,11 +1,10 @@
 on:
     schedule:
-        - cron: '*/2 * * * *'
+      - cron: '*/5 * * * *'
 
-jobs:
-    schedule-job:
-        runs-on: ubuntu-latest
-        name: Test schedule job running every 2 mins
-        steps:
-            - name: Echo current time
-              run: echo "The current time is $(date)"
+  jobs:
+    hello_world:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Echo current time
+          run: echo "The current server time is $(date)"

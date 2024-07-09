@@ -1,3 +1,5 @@
+name:  Scheduled
+
 on:
     schedule:
         - cron: '*/2 * * * *'

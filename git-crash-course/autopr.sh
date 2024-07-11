@@ -21,7 +21,7 @@ fi
 cd $REPO_PATH || { echo "Repository path not found!"; exit 1; }
 
 # Create the pull request
-PR_URL=$(gh pr create --base $BASE_BRANCH --head $COMPARE_BRANCH --fill --assignee @me --web | grep -o 'https://github\.com/[^\"]*')
+PR_URL=$(gh pr create --fill --assignee @me --web | grep -o 'https://github\.com/[^\"]*')
 
 if [ -z "$PR_URL" ]; then
     echo "Failed to create the pull request"

@@ -1,0 +1,28 @@
+name: Manual GitHub Actions Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Your Name please"
+        required: true
+        type: string
+      salutation:
+        description: "Your preferred Salutation"
+        required: true
+        type: string
+      data:
+        description: "Base64 encoded text file"
+        required: false
+        type: string
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Decode File Content
+        run:  |
+          echo "${{ inputs.data }}" | base64 --decode > ./decoded_file.txt
+      - name: Greet User
+        run:  |
+          echo "Hello, {{ inputs.salutation }}, {{ inputs.name }"

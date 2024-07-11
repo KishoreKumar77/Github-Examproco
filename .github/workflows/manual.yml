@@ -25,4 +25,8 @@ jobs:
           echo "${{ inputs.data }}" | base64 --decode > ./decoded_file.txt
       - name: Greet User
         run:  |
-          echo "Hello, ${{ inputs.salutation }}, ${{ inputs.name }}"
+          echo "Hello, ${{ inputs.salutation }} ${{ inputs.name }}"
+      - name: Display File Content
+        run:  |
+          echo "Contents of the file ${{ inputs.data }}"
+          cat ./decoded_file.txt

@@ -19,9 +19,10 @@ fi
 
 # Navigate to the repository
 cd $REPO_PATH || { echo "Repository path not found!"; exit 1; }
+gh repo set-default KishoreKumar77/Github-Examproco
 
 # Create the pull request
-PR_URL=$(gh pr create --fill --assignee @me --web | grep -o 'https://github\.com/[^\"]*')
+PR_URL=$(gh pr create --base $BASE_BRANCH --head $COMPARE_BRANCH --title "$PR_TITLE" --body "$PR_BODY" --assignee @me)
 
 if [ -z "$PR_URL" ]; then
     echo "Failed to create the pull request"

@@ -7,7 +7,7 @@ on:
 
 jobs:
   true-condition:
-    if: github.repository == 'KishoreKumar/Github-Examproco'
+    if: github.repository == 'KishoreKumar77/Github-Examproco'
     runs-on: ubuntu-latest
     steps:
       - name: "True Condition"

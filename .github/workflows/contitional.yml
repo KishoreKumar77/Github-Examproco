@@ -1,0 +1,16 @@
+name: Conditional Workflow
+
+on: [push]
+
+jobs:
+  true-condition:
+    if: github.repository == 'KishoreKumar77/Github-Examproco'
+    runs-on: ubuntu-latest
+    steps:
+      - name: "True Condition"
+        run: echo "Conition is True"
+  false-condition:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "False Condition"
+        run: echo "Condition is False"
